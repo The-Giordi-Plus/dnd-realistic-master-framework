@@ -9,17 +9,17 @@ Definisce come usare il repository GitHub della campagna come memoria persistent
 Quando GitHub è disponibile, i file vivi del repository hanno precedenza sulla memoria informale della chat per lo stato persistente.
 
 ## 2. DOCUMENTI VIVI
-- `campaign/PG.md`: scheda e risorse del personaggio.
-- `campaign/STATO_CAMPAGNA.md`: luogo, data, ora, condizioni generali, stato del mondo e note operative.
-- `campaign/NPC_CAMPAGNA.md`: NPC rilevanti e relazioni.
-- `campaign/QUEST.md`: missioni, obiettivi, scadenze e stato.
-- `campaign/CRONOLOGIA.md`: eventi significativi già avvenuti in ordine temporale.
+- `campagna/PG.md`: scheda e risorse del personaggio.
+- `campagna/STATO_CAMPAGNA.md`: luogo, data, ora, condizioni generali, stato del mondo e note operative.
+- `campagna/NPC_CAMPAGNA.md`: NPC rilevanti e relazioni.
+- `campagna/QUEST.md`: missioni, obiettivi, scadenze e stato.
+- `campagna/CRONOLOGIA.md`: eventi significativi già avvenuti in ordine temporale.
 - `dm/SEGRETI_DM.md`: verità e segreti non automaticamente conoscibili dal giocatore.
 - `dm/FAZIONI_INTERNE.md`: stato interno completo delle fazioni.
 - `dm/EVENTI_PENDENTI.md`: conseguenze, fronti e scadenze ancora in evoluzione.
 
 ## 3. LETTURA INIZIALE
-All'inizio di una sessione o quando riprendi una campagna, consulta almeno `campaign/PG.md` e `campaign/STATO_CAMPAGNA.md`; consulta gli altri file pertinenti alla scena.
+All'inizio di una sessione o quando riprendi una campagna, consulta almeno `campagna/PG.md` e `campagna/STATO_CAMPAGNA.md`; consulta gli altri file pertinenti alla scena.
 
 ## 4. NON INVENTARE STATO
 Se un dato persistente manca, non inventarlo come se fosse già stabilito. Chiedilo solo se indispensabile; altrimenti lascia il campo sconosciuto fino a quando emergerà nel gioco.
@@ -46,10 +46,10 @@ Se GitHub non è disponibile o una scrittura fallisce, continua il gioco mantene
 Se repository e chat divergono, verifica quale dato è più recente. Non sovrascrivere automaticamente un file più recente con memoria vecchia.
 
 ## 12. CRONOLOGIA
-Aggiungi a `campaign/CRONOLOGIA.md` solo eventi rilevanti per continuità, mondo, relazioni, quest, conseguenze o storia del PG.
+Aggiungi a `campagna/CRONOLOGIA.md` solo eventi rilevanti per continuità, mondo, relazioni, quest, conseguenze o storia del PG.
 
 ## 13. NPC
-`campaign/NPC_CAMPAGNA.md` deve registrare solo personaggi che possono realisticamente tornare o influenzare il mondo. Per ciascuno conserva fatti, conoscenze e relazione rilevanti.
+`campagna/NPC_CAMPAGNA.md` deve registrare solo personaggi che possono realisticamente tornare o influenzare il mondo. Per ciascuno conserva fatti, conoscenze e relazione rilevanti.
 
 ## 14. QUEST
 Per ogni quest conserva: titolo, stato, origine, obiettivo noto, eventuale scadenza, soggetti coinvolti, informazioni note e conseguenze rilevanti.
@@ -61,7 +61,7 @@ Mantieni: data/ora del mondo, posizione del PG, situazione corrente, eventi glob
 Mantieni dati regolamentari, HP, risorse, condizioni, equipaggiamento, inventario, denaro, capacità limitate e informazioni necessarie alla risoluzione del gioco.
 
 ## 17. SEGRETI DEL DM
-Non inserire nei file player-facing segreti che rovinerebbero la campagna. Usa `dm/SEGRETI_DM.md`, `dm/FAZIONI_INTERNE.md` e `dm/EVENTI_PENDENTI.md` per informazioni non automaticamente conoscibili dal PG.
+Non inserire nei file visibili al giocatore segreti che rovinerebbero la campagna. Usa `dm/SEGRETI_DM.md`, `dm/FAZIONI_INTERNE.md` e `dm/EVENTI_PENDENTI.md` per informazioni non automaticamente conoscibili dal PG.
 
 ## 18. VERSIONI E DUPLICATI
 Usa sempre lo stesso file vivo quando esiste. Git è la cronologia delle versioni: non creare copie tipo `PG_v2.md`, `QUEST_finale.md` o simili.

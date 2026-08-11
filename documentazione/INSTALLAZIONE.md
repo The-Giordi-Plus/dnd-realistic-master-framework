@@ -8,7 +8,7 @@ Crea su GitHub un nuovo repository privato.
 
 Copia:
 
-- `modelli/campagna/` → `campaign/`
+- `modelli/campagna/` → `campagna/`
 - `modelli/dm/` → `dm/`
 
 Non usare il repository pubblico del framework come repository della tua campagna reale.
@@ -63,8 +63,8 @@ Sostituisci:
 
 Verifica `readCampaignFile` leggendo almeno:
 
-- `campaign/PG.md`
-- `campaign/STATO_CAMPAGNA.md`
+- `campagna/PG.md`
+- `campagna/STATO_CAMPAGNA.md`
 
 Entrambi devono essere recuperati dal branch `main`.
 

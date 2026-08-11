@@ -64,11 +64,11 @@ Usa come memoria persistente e autorevole:
 Branch: `main`
 
 File dinamici canonici:
-- `campaign/PG.md`
-- `campaign/STATO_CAMPAGNA.md`
-- `campaign/NPC_CAMPAGNA.md`
-- `campaign/QUEST.md`
-- `campaign/CRONOLOGIA.md`
+- `campagna/PG.md`
+- `campagna/STATO_CAMPAGNA.md`
+- `campagna/NPC_CAMPAGNA.md`
+- `campagna/QUEST.md`
+- `campagna/CRONOLOGIA.md`
 
 File interni DM:
 - `dm/SEGRETI_DM.md`
@@ -77,7 +77,7 @@ File interni DM:
 
 Lo stato del repository ha precedenza sulla memoria informale della chat.
 
-All'inizio di una nuova conversazione, alla ripresa della campagna o quando lo stato è incerto, usa `readCampaignFile` per leggere almeno `campaign/PG.md` e `campaign/STATO_CAMPAGNA.md`.
+All'inizio di una nuova conversazione, alla ripresa della campagna o quando lo stato è incerto, usa `readCampaignFile` per leggere almeno `campagna/PG.md` e `campagna/STATO_CAMPAGNA.md`.
 
 Non inventare dati persistenti mancanti.
 

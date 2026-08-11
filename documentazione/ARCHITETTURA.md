@@ -12,11 +12,11 @@ Lo stato vivo viene salvato in un repository GitHub privato separato.
 
 File canonici della campagna:
 
-- `campaign/PG.md`
-- `campaign/STATO_CAMPAGNA.md`
-- `campaign/NPC_CAMPAGNA.md`
-- `campaign/QUEST.md`
-- `campaign/CRONOLOGIA.md`
+- `campagna/PG.md`
+- `campagna/STATO_CAMPAGNA.md`
+- `campagna/NPC_CAMPAGNA.md`
+- `campagna/QUEST.md`
+- `campagna/CRONOLOGIA.md`
 
 File interni del DM:
 

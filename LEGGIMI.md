@@ -54,7 +54,7 @@ Consulta `LICENZA.md` per la mappatura dei file.
 ## Avvio rapido
 
 1. Crea un repository GitHub **privato** per la tua campagna.
-2. Copia `modelli/campagna/` in `campaign/`.
+2. Copia `modelli/campagna/` in `campagna/`.
 3. Copia `modelli/dm/` in `dm/`.
 4. Crea un Custom GPT.
 5. Carica i nove file presenti in `regole/` come Knowledge.
