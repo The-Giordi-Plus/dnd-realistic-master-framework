@@ -1,0 +1,125 @@
+openapi: 3.1.0
+
+info:
+  title: D&D Realistic Master GitHub Storage
+  version: 1.0.0
+  description: Read and update Markdown campaign files in a private GitHub repository.
+
+servers:
+  - url: https://api.github.com
+
+paths:
+  /repos/YOUR_GITHUB_USERNAME/YOUR_CAMPAIGN_REPOSITORY/contents/{path}:
+    get:
+      operationId: readCampaignFile
+      summary: Read a campaign file
+      parameters:
+        - name: path
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ref
+          in: query
+          required: false
+          schema:
+            type: string
+            default: main
+      responses:
+        "200":
+          description: File retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: { type: string }
+                  encoding: { type: string }
+                  size: { type: integer }
+                  name: { type: string }
+                  path: { type: string }
+                  content: { type: string }
+                  sha: { type: string }
+                  url: { type: string }
+                  html_url: { type: string }
+                  download_url:
+                    type: [string, "null"]
+                required: [type, name, path, sha]
+        "404":
+          description: File not found
+
+    put:
+      operationId: writeCampaignFile
+      summary: Create or update a persistent campaign file
+      parameters:
+        - name: path
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                content:
+                  type: string
+                  description: Complete UTF-8 file content encoded in Base64.
+                sha:
+                  type: string
+                  description: Current file SHA; required when updating an existing file.
+                branch:
+                  type: string
+                  default: main
+              required: [message, content]
+      responses:
+        "200":
+          description: File updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: object
+                    properties:
+                      name: { type: string }
+                      path: { type: string }
+                      sha: { type: string }
+                    required: [name, path, sha]
+                  commit:
+                    type: object
+                    properties:
+                      sha: { type: string }
+                      message: { type: string }
+                    required: [sha]
+        "201":
+          description: File created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: object
+                    properties:
+                      name: { type: string }
+                      path: { type: string }
+                      sha: { type: string }
+                    required: [name, path, sha]
+                  commit:
+                    type: object
+                    properties:
+                      sha: { type: string }
+                      message: { type: string }
+                    required: [sha]
+        "404":
+          description: Repository or path not found
+        "409":
+          description: Conflict, usually stale SHA
+        "422":
+          description: Invalid request

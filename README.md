@@ -1,33 +1,49 @@
 # D&D Realistic Master Framework
 
-Open-source framework for building a persistent, realistic AI Dungeon Master for D&D 5.5e.
+A browser-first open framework for building a persistent, realistic AI Dungeon Master for the revised 5e / 5.5e ruleset.
 
-The project is designed around a few core principles:
+## Core ideas
 
-- persistent campaign state stored in GitHub;
-- tool-based random number generation for dice;
-- no plot armor or dice fudging;
-- autonomous NPCs, factions and world events;
-- strict separation between DM knowledge, NPC knowledge and player-character knowledge;
-- versioned campaign state with Git history;
-- browser-first setup with no local installation required.
+- persistent campaign state stored in a private GitHub repository;
+- tool-based RNG instead of language-model-selected dice;
+- no plot armor and no dice fudging;
+- autonomous NPCs, factions, quests, deadlines, and world events;
+- strict anti-metagaming and knowledge separation;
+- Git version history for campaign state;
+- separate player-facing and DM-only state;
+- no local installation required for the reference setup.
 
-## Project status
+## Status
 
-Early public framework / pre-alpha.
+**v0.1 pre-alpha framework package.**
 
-The framework is currently being separated from a private reference campaign before the first public release.
+This repository contains the reusable framework only. Individual campaigns should live in separate private repositories created from the templates.
 
-## Planned structure
+## Structure
 
-- `knowledge/` — static operational rules for the AI Dungeon Master
-- `templates/campaign/` — player-facing persistent campaign-state templates
-- `templates/dm/` — private DM-state templates
-- `gpt/` — Custom GPT instructions and GitHub Action schema
-- `docs/` — setup, architecture, security and usage documentation
+- `knowledge/` — static AI-DM operating procedures
+- `templates/campaign/` — public empty campaign-state templates
+- `templates/dm/` — empty DM-only state templates
+- `gpt/INSTRUCTIONS.md` — generic Custom GPT instruction template
+- `gpt/github-action-openapi.yaml` — generic GitHub Contents API Action schema
+- `docs/` — setup, architecture, security, licensing, and release notes
 
-## Important
+## Security
 
-Do not commit GitHub personal access tokens, API keys, `.env` files, campaign secrets, or private player data.
+Never commit Personal Access Tokens, API keys, `.env` files, private campaign secrets, or player personal data to a public repository.
 
-The repository does not currently include a license. Licensing and SRD attribution will be added after the project content audit.
+Each user should create a **separate private campaign repository** and a fine-grained GitHub token limited to that repository with only the minimum required permissions.
+
+## D&D / SRD compatibility
+
+This project is designed for the revised 5e / 5.5e ruleset and uses **SRD 5.2.1** as its public compatibility baseline. It does not redistribute the Player's Handbook, Dungeon Master's Guide, Monster Manual, or other non-SRD rulebook content.
+
+See `NOTICE.md` and `LICENSE.md`.
+
+## License
+
+This repository uses a split license:
+- code/configuration files: MIT;
+- knowledge, templates, and documentation: CC BY 4.0.
+
+See `LICENSE.md` for the file-level mapping.
