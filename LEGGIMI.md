@@ -179,7 +179,7 @@ Il Custom GPT utilizza:
 ## Struttura del repository
 
 ```text
-dnd-realistic-master-framework/
+CHATGPT DnD REALISTICO/
 ├── regole/
 ├── modelli/
 │   ├── campagna/
