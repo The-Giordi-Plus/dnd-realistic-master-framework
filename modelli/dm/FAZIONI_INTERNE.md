@@ -1,18 +1,18 @@
-# FACTIONS — INTERNAL DM STATE
+# FAZIONI — STATO INTERNO DM
 
-No factions established.
+Nessuna fazione ancora stabilita.
 
-## Faction Template
-### F-XXX — Name
+## Modello fazione
+### F-XXX — Nome
 - Leadership:
-- Territory / influence:
-- Resources:
-- Goals:
-- Problems:
-- Allies:
-- Enemies:
-- Information held:
-- Incorrect beliefs:
-- Current plan:
-- Next planned action:
-- Advancement condition / date:
+- Territorio / influenza:
+- Risorse:
+- Obiettivi:
+- Problemi:
+- Alleati:
+- Nemici:
+- Informazioni possedute:
+- Informazioni errate:
+- Piano corrente:
+- Prossima azione prevista:
+- Condizione o data di avanzamento:

@@ -1,27 +1,31 @@
-# Licensing
+# Licenze del progetto
 
-This repository uses two licenses to keep code/configuration and textual framework content unambiguous.
+Questo repository utilizza due licenze per distinguere chiaramente configurazioni tecniche e contenuti testuali.
 
-## MIT License
+## Licenza MIT
 
-The following files are licensed under the MIT License:
-- `gpt/AZIONE_GITHUB_OPENAPI.yaml`
-- future scripts, source code, and machine-oriented configuration files explicitly marked as MIT.
+Sono distribuiti sotto licenza MIT:
 
-See `LICENSE-MIT`.
+- `gpt/AZIONE_GITHUB_OPENAPI.yaml`;
+- eventuali script, codice sorgente e configurazioni tecniche esplicitamente indicate come MIT.
 
-## Creative Commons Attribution 4.0 International (CC BY 4.0)
+Consulta `LICENZA-MIT`.
 
-The following are licensed under CC BY 4.0:
-- `regole/**`
-- `modelli/**`
-- `documentazione/**`
-- `gpt/ISTRUZIONI.md`
-- `LEGGIMI.md`
-- other prose/documentation unless a file states otherwise.
+## Creative Commons Attribution 4.0 International
 
-See `LICENSE-CC-BY-4.0.md`.
+Sono distribuiti sotto CC BY 4.0:
 
-Some Dungeons & Dragons rules terminology and mechanics referenced by the framework are compatible with and may derive from the Dungeons & Dragons System Reference Document 5.2.1, which Wizards of the Coast has released under CC BY 4.0. See `AVVISO.md`.
+- `regole/**`;
+- `modelli/**`;
+- `documentazione/**`;
+- `gpt/ISTRUZIONI.md`;
+- `LEGGIMI.md`;
+- altri contenuti testuali salvo indicazione diversa nel singolo file.
 
-Nothing in this repository grants rights to Dungeons & Dragons content that is not included in the applicable SRD or otherwise licensed for reuse.
+Consulta `LICENZA-CC-BY-4.0.md`.
+
+Alcuni termini e meccaniche di Dungeons & Dragons richiamati dal framework sono compatibili con, e dove applicabile derivano da, Dungeons & Dragons System Reference Document 5.2.1, pubblicato da Wizards of the Coast sotto CC BY 4.0.
+
+Consulta `AVVISO.md`.
+
+Nessuna licenza di questo repository concede diritti su contenuti Dungeons & Dragons non inclusi nell'SRD applicabile o comunque non autorizzati alla redistribuzione.

@@ -1,6 +1,6 @@
 ﻿D&D REALISTIC MASTER — REGOLE OPERATIVE DEL DUNGEON MASTER
 
-> Public framework note: designed for the revised 5e / 5.5e ruleset and SRD 5.2.1-compatible use. This file defines AI-DM operating procedures; it is not a substitute for the official rules.
+> Nota del framework pubblico: progettato per il regolamento revisionato 5e / 5.5e e per un utilizzo compatibile con SRD 5.2.1. Questo file definisce procedure operative per il DM IA e non sostituisce i regolamenti ufficiali.
 
 SCOPO DEL FILE
 Questo documento definisce il comportamento generale e permanente del Dungeon Master. Deve essere applicato insieme alle Instructions del GPT e agli altri file Knowledge. Quando una procedura più specifica è descritta in un altro file Knowledge, quella procedura integra queste regole senza contraddirne i principi fondamentali.

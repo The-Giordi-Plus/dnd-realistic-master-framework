@@ -1,60 +1,83 @@
 openapi: 3.1.0
 
 info:
-  title: D&D Realistic Master GitHub Storage
+  title: Archivio GitHub D&D Realistic Master
   version: 1.0.0
-  description: Read and update Markdown campaign files in a private GitHub repository.
+  description: Legge e aggiorna i file Markdown persistenti della campagna in un repository GitHub privato.
 
 servers:
   - url: https://api.github.com
 
 paths:
-  /repos/YOUR_GITHUB_USERNAME/YOUR_CAMPAIGN_REPOSITORY/contents/{path}:
+  /repos/TUO_USERNAME_GITHUB/TUO_REPOSITORY_CAMPAGNA/contents/{path}:
     get:
       operationId: readCampaignFile
-      summary: Read a campaign file
+      summary: Legge un file della campagna
+      description: Recupera contenuto e metadati correnti di un file dal repository.
       parameters:
         - name: path
           in: path
           required: true
+          description: Percorso relativo del file nel repository.
           schema:
             type: string
         - name: ref
           in: query
           required: false
+          description: Branch o riferimento Git da leggere.
           schema:
             type: string
             default: main
       responses:
         "200":
-          description: File retrieved
+          description: File recuperato correttamente
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  type: { type: string }
-                  encoding: { type: string }
-                  size: { type: integer }
-                  name: { type: string }
-                  path: { type: string }
-                  content: { type: string }
-                  sha: { type: string }
-                  url: { type: string }
-                  html_url: { type: string }
+                  type:
+                    type: string
+                  encoding:
+                    type: string
+                  size:
+                    type: integer
+                  name:
+                    type: string
+                  path:
+                    type: string
+                  content:
+                    type: string
+                  sha:
+                    type: string
+                  url:
+                    type: string
+                  html_url:
+                    type: string
                   download_url:
-                    type: [string, "null"]
-                required: [type, name, path, sha]
+                    type:
+                      - string
+                      - "null"
+                required:
+                  - type
+                  - name
+                  - path
+                  - sha
         "404":
-          description: File not found
+          description: File non trovato
 
     put:
       operationId: writeCampaignFile
-      summary: Create or update a persistent campaign file
+      summary: Crea o aggiorna un file persistente della campagna
+      description: >
+        Crea un nuovo file o sostituisce un file esistente.
+        Prima di aggiornare un file esistente, usa readCampaignFile per ottenere lo SHA corrente.
+        Il contenuto Markdown UTF-8 deve essere codificato in Base64.
       parameters:
         - name: path
           in: path
           required: true
+          description: Percorso relativo del file nel repository.
           schema:
             type: string
       requestBody:
@@ -66,19 +89,22 @@ paths:
               properties:
                 message:
                   type: string
+                  description: Messaggio descrittivo del commit Git.
                 content:
                   type: string
-                  description: Complete UTF-8 file content encoded in Base64.
+                  description: Contenuto completo UTF-8 del file codificato in Base64.
                 sha:
                   type: string
-                  description: Current file SHA; required when updating an existing file.
+                  description: SHA corrente del file; obbligatorio quando si aggiorna un file esistente.
                 branch:
                   type: string
                   default: main
-              required: [message, content]
+              required:
+                - message
+                - content
       responses:
         "200":
-          description: File updated
+          description: File aggiornato
           content:
             application/json:
               schema:
@@ -87,18 +113,27 @@ paths:
                   content:
                     type: object
                     properties:
-                      name: { type: string }
-                      path: { type: string }
-                      sha: { type: string }
-                    required: [name, path, sha]
+                      name:
+                        type: string
+                      path:
+                        type: string
+                      sha:
+                        type: string
+                    required:
+                      - name
+                      - path
+                      - sha
                   commit:
                     type: object
                     properties:
-                      sha: { type: string }
-                      message: { type: string }
-                    required: [sha]
+                      sha:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - sha
         "201":
-          description: File created
+          description: File creato
           content:
             application/json:
               schema:
@@ -107,19 +142,28 @@ paths:
                   content:
                     type: object
                     properties:
-                      name: { type: string }
-                      path: { type: string }
-                      sha: { type: string }
-                    required: [name, path, sha]
+                      name:
+                        type: string
+                      path:
+                        type: string
+                      sha:
+                        type: string
+                    required:
+                      - name
+                      - path
+                      - sha
                   commit:
                     type: object
                     properties:
-                      sha: { type: string }
-                      message: { type: string }
-                    required: [sha]
+                      sha:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - sha
         "404":
-          description: Repository or path not found
+          description: Repository o percorso non trovato
         "409":
-          description: Conflict, usually stale SHA
+          description: Conflitto, normalmente causato da uno SHA non aggiornato
         "422":
-          description: Invalid request
+          description: Richiesta non valida

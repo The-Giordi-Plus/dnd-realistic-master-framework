@@ -1,23 +1,46 @@
-# Architecture
+# Architettura
 
-The framework separates three concerns:
+Il framework separa tre responsabilità.
 
-1. **Static operating rules** — loaded into the AI assistant as Knowledge.
-2. **Dynamic campaign state** — stored in a separate private GitHub repository.
-3. **Randomness/tool execution** — handled by Code Interpreter/Data Analysis or another reliable RNG tool.
+## 1. Regole operative statiche
 
-## State model
+I file in `regole/` definiscono il comportamento permanente del Dungeon Master IA e vengono caricati nel Custom GPT come Knowledge.
 
-Player-facing canonical state:
+## 2. Stato dinamico della campagna
+
+Lo stato vivo viene salvato in un repository GitHub privato separato.
+
+File canonici della campagna:
+
 - `campaign/PG.md`
 - `campaign/STATO_CAMPAGNA.md`
 - `campaign/NPC_CAMPAGNA.md`
 - `campaign/QUEST.md`
 - `campaign/CRONOLOGIA.md`
 
-DM-only state:
+File interni del DM:
+
 - `dm/SEGRETI_DM.md`
 - `dm/FAZIONI_INTERNE.md`
 - `dm/EVENTI_PENDENTI.md`
 
-Git history provides versioning and rollback. Chat memory is never treated as the sole authoritative persistent store.
+La cronologia Git fornisce versionamento e possibilità di rollback. La memoria della chat non viene mai considerata l'unica fonte autorevole dello stato persistente.
+
+## 3. Casualità e strumenti
+
+Quando disponibile, Code Interpreter / Data Analysis viene utilizzato per generare i risultati casuali dei dadi.
+
+Il modello decide quando è necessario un tiro e quali regole applicare; lo strumento RNG determina il risultato.
+
+## Flusso di una sessione
+
+1. Il GPT legge `PG.md` e `STATO_CAMPAGNA.md`.
+2. Consulta gli altri file soltanto quando pertinenti.
+3. Risolve il gioco applicando Instructions, regole, stato persistente e RNG.
+4. Quando cambia uno stato persistente, legge il file e lo SHA correnti.
+5. Aggiorna il file tramite GitHub API.
+6. GitHub registra la modifica in un commit.
+
+## Principio fondamentale
+
+Il repository privato della campagna rappresenta la memoria persistente verificabile; il repository pubblico del framework contiene soltanto motore, modelli e documentazione.

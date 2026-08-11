@@ -1,45 +1,102 @@
-# Installation — Pre-alpha
+# Installazione — Pre-alpha
 
-## 1. Create a private campaign repository
+La configurazione di riferimento funziona interamente da browser.
 
-Create a new private GitHub repository for the campaign.
+## 1. Crea un repository privato per la campagna
 
-Copy:
-- `modelli/campaign/` to `campaign/`
-- `modelli/dm/` to `dm/`
+Crea su GitHub un nuovo repository privato.
 
-## 2. Configure the Custom GPT
+Copia:
 
-Upload the nine files from `regole/` as Knowledge.
+- `modelli/campagna/` → `campaign/`
+- `modelli/dm/` → `dm/`
 
-Copy `gpt/ISTRUZIONI.md` into the Custom GPT Instructions and replace:
-- `YOUR_GITHUB_USERNAME`
-- `YOUR_CAMPAIGN_REPOSITORY`
+Non usare il repository pubblico del framework come repository della tua campagna reale.
 
-Enable Code Interpreter / Data Analysis.
+## 2. Crea il Custom GPT
 
-## 3. Create GitHub authentication
+Crea un nuovo Custom GPT.
 
-Create a fine-grained Personal Access Token restricted to the private campaign repository with `Contents: Read and write`.
+Carica come Knowledge i nove file presenti nella cartella `regole/`.
 
-Configure the Custom GPT Action authentication as an API key using Bearer authentication.
+Apri `gpt/ISTRUZIONI.md`, copia il contenuto nel campo Instructions e sostituisci:
 
-## 4. Configure the GitHub Action
+- `TUO_USERNAME_GITHUB`
+- `TUO_REPOSITORY_CAMPAGNA`
 
-Copy `gpt/AZIONE_GITHUB_OPENAPI.yaml` into the Action schema.
+con i dati del tuo repository privato.
 
-Replace:
-- `YOUR_GITHUB_USERNAME`
-- `YOUR_CAMPAIGN_REPOSITORY`
+Attiva **Code Interpreter / Data Analysis**.
 
-Test `readCampaignFile` before testing writes.
+## 3. Crea il token GitHub
 
-## 5. Verify persistence
+Crea un Personal Access Token fine-grained.
 
-Read `campaign/PG.md` and `campaign/STATO_CAMPAGNA.md`.
+Configurazione consigliata:
 
-Perform a controlled write test, verify the resulting Git commit, then restore any temporary test data.
+- accesso soltanto al repository privato della campagna;
+- permesso repository `Contents: Read and write`;
+- nessun altro permesso non necessario.
 
-## 6. Verify RNG
+Non inserire mai il token nei file del repository.
 
-Ask the GPT to generate multiple independent dice results using Code Interpreter / Data Analysis and confirm that the tool actually executes.
+## 4. Configura l'autenticazione dell'Action
+
+Nel Custom GPT:
+
+- autenticazione: `Chiave API`;
+- tipo: `Bearer`;
+- chiave: il token GitHub appena creato.
+
+## 5. Configura lo schema OpenAPI
+
+Copia nel campo Schema il contenuto di:
+
+`gpt/AZIONE_GITHUB_OPENAPI.yaml`
+
+Sostituisci:
+
+- `TUO_USERNAME_GITHUB`
+- `TUO_REPOSITORY_CAMPAGNA`
+
+## 6. Test di lettura
+
+Verifica `readCampaignFile` leggendo almeno:
+
+- `campaign/PG.md`
+- `campaign/STATO_CAMPAGNA.md`
+
+Entrambi devono essere recuperati dal branch `main`.
+
+## 7. Test di scrittura
+
+Esegui una modifica controllata su un file della campagna.
+
+Verifica:
+
+- lettura dello SHA corrente;
+- esecuzione di `writeCampaignFile`;
+- creazione di un vero commit GitHub;
+- nuovo SHA del file.
+
+Rimuovi eventuali dati inseriti esclusivamente per il test.
+
+## 8. Test del generatore di dadi
+
+Chiedi al GPT di generare più tiri indipendenti tramite Code Interpreter / Data Analysis.
+
+Verifica che venga realmente utilizzato lo strumento e non una sequenza scelta linguisticamente dal modello.
+
+## 9. Controllo finale
+
+Prima di iniziare una campagna reale verifica:
+
+- Knowledge caricati;
+- Instructions configurate;
+- Action GitHub funzionante;
+- repository privato raggiungibile;
+- lettura riuscita;
+- scrittura riuscita;
+- RNG tramite strumento riuscito.
+
+Solo dopo questi test inizializza PG, mondo e campagna.

@@ -1,4 +1,4 @@
-# Secrets
+# Segreti
 .env
 .env.*
 *.token
@@ -6,13 +6,13 @@
 secrets.*
 credentials.*
 
-# Local/editor
+# Editor / sistema
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# Archives / temporary files
+# Archivi / temporanei
 *.zip
 *.tmp
 *.bak

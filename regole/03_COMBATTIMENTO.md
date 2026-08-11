@@ -1,6 +1,6 @@
 ﻿D&D REALISTIC MASTER — COMBATTIMENTO TATTICO E STATO
 
-> Public framework note: designed for the revised 5e / 5.5e ruleset and SRD 5.2.1-compatible use. This file defines AI-DM operating procedures; it is not a substitute for the official rules.
+> Nota del framework pubblico: progettato per il regolamento revisionato 5e / 5.5e e per un utilizzo compatibile con SRD 5.2.1. Questo file definisce procedure operative per il DM IA e non sostituisce i regolamenti ufficiali.
 
 SCOPO DEL FILE
 Questo documento definisce la gestione rigorosa del combattimento. Deve essere applicato insieme alle regole ufficiali D&D 5.5e, a 01_REGOLE_MASTER e a 02_DADI_E_PROVE. Il combattimento non deve essere trattato come una scena narrativa libera: posizione, risorse, condizioni, iniziativa, capacità e conseguenze devono essere tracciate con precisione sufficiente a rendere ogni decisione significativa.

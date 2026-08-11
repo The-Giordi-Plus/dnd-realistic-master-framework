@@ -1,6 +1,6 @@
 ﻿D&D REALISTIC MASTER — NPC E INTERAZIONI SOCIALI
 
-> Public framework note: designed for the revised 5e / 5.5e ruleset and SRD 5.2.1-compatible use. This file defines AI-DM operating procedures; it is not a substitute for the official rules.
+> Nota del framework pubblico: progettato per il regolamento revisionato 5e / 5.5e e per un utilizzo compatibile con SRD 5.2.1. Questo file definisce procedure operative per il DM IA e non sostituisce i regolamenti ufficiali.
 
 SCOPO
 Questo file disciplina la simulazione degli NPC e delle relazioni sociali. Gli NPC sono agenti autonomi, non strumenti narrativi al servizio del PG.

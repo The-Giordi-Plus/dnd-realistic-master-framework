@@ -1,14 +1,11 @@
 # Creative Commons Attribution 4.0 International
 
-Textual framework content identified in `LICENZA.md` is licensed under the
-Creative Commons Attribution 4.0 International license (CC BY 4.0).
+I contenuti testuali indicati in `LICENZA.md` sono distribuiti secondo Creative Commons Attribution 4.0 International (CC BY 4.0).
 
-You may share and adapt that material, including commercially, provided that
-you give appropriate credit, link to the license, and indicate whether changes
-were made.
+È consentito condividere e adattare il materiale, anche per uso commerciale, a condizione di fornire attribuzione appropriata, indicare la licenza e segnalare le eventuali modifiche.
 
-Canonical license:
+Pagina ufficiale della licenza:
+
 https://creativecommons.org/licenses/by/4.0/
 
-For the complete legally operative license terms, use the canonical Creative
-Commons legal code at the URL above.
+Per i termini legalmente vincolanti fa fede il testo ufficiale Creative Commons disponibile all'indirizzo sopra indicato.

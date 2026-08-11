@@ -1,49 +1,67 @@
 # D&D Realistic Master Framework
 
-A browser-first open framework for building a persistent, realistic AI Dungeon Master for the revised 5e / 5.5e ruleset.
+Framework aperto e utilizzabile interamente da browser per creare un Dungeon Master IA persistente e realistico per il regolamento revisionato 5e / 5.5e.
 
-## Core ideas
+## Obiettivi principali
 
-- persistent campaign state stored in a private GitHub repository;
-- tool-based RNG instead of language-model-selected dice;
-- no plot armor and no dice fudging;
-- autonomous NPCs, factions, quests, deadlines, and world events;
-- strict anti-metagaming and knowledge separation;
-- Git version history for campaign state;
-- separate player-facing and DM-only state;
-- no local installation required for the reference setup.
+- stato persistente della campagna salvato in un repository GitHub privato;
+- dadi generati tramite uno strumento RNG, non scelti linguisticamente dal modello;
+- nessuna plot armor e nessuna manipolazione dei risultati;
+- NPC, fazioni, quest, scadenze ed eventi del mondo autonomi;
+- separazione rigorosa tra conoscenza del DM, degli NPC, del PG e del giocatore;
+- cronologia Git per versionamento e rollback dello stato della campagna;
+- separazione tra file visibili al giocatore e file interni del DM;
+- configurazione di riferimento senza installazioni locali.
 
-## Status
+## Stato del progetto
 
-**v0.1 pre-alpha framework package.**
+**v0.1 pre-alpha.**
 
-This repository contains the reusable framework only. Individual campaigns should live in separate private repositories created from the templates.
+Questo repository contiene soltanto il framework riutilizzabile. Le singole campagne devono vivere in repository privati separati creati a partire dai modelli inclusi.
 
-## Structure
+## Struttura
 
-- `regole/` — static AI-DM operating procedures
-- `modelli/campaign/` — public empty campaign-state templates
-- `modelli/dm/` — empty DM-only state templates
-- `gpt/ISTRUZIONI.md` — generic Custom GPT instruction template
-- `gpt/AZIONE_GITHUB_OPENAPI.yaml` — generic GitHub Contents API Action schema
-- `documentazione/` — setup, architecture, security, licensing, and release notes
+- `regole/` — procedure operative statiche del Dungeon Master IA;
+- `modelli/campagna/` — modelli vuoti per lo stato persistente della campagna;
+- `modelli/dm/` — modelli vuoti per lo stato interno e segreto del DM;
+- `gpt/ISTRUZIONI.md` — modello generico delle Instructions del Custom GPT;
+- `gpt/AZIONE_GITHUB_OPENAPI.yaml` — schema dell'Action GitHub;
+- `documentazione/` — installazione, architettura, sicurezza e note di rilascio.
 
-## Security
+## Sicurezza
 
-Never commit Personal Access Tokens, API keys, `.env` files, private campaign secrets, or player personal data to a public repository.
+Non pubblicare mai Personal Access Token GitHub, API key, file `.env`, credenziali, segreti della campagna o dati personali dei giocatori.
 
-Each user should create a **separate private campaign repository** and a fine-grained GitHub token limited to that repository with only the minimum required permissions.
+Ogni utente dovrebbe creare un **repository privato separato per la propria campagna** e un token GitHub fine-grained limitato esclusivamente a quel repository e ai soli permessi necessari.
 
-## D&D / SRD compatibility
+## Compatibilità D&D / SRD
 
-This project is designed for the revised 5e / 5.5e ruleset and uses **SRD 5.2.1** as its public compatibility baseline. It does not redistribute the Player's Handbook, Dungeon Master's Guide, Monster Manual, or other non-SRD rulebook content.
+Il progetto è pensato per il regolamento revisionato 5e / 5.5e e usa **SRD 5.2.1** come base pubblica di compatibilità.
 
-See `AVVISO.md` and `LICENZA.md`.
+Non redistribuisce Player's Handbook, Dungeon Master's Guide, Monster Manual o altro contenuto non incluso nell'SRD applicabile.
 
-## License
+Consulta `AVVISO.md` e `LICENZA.md`.
 
-This repository uses a split license:
-- code/configuration files: MIT;
-- knowledge, templates, and documentation: CC BY 4.0.
+## Licenze
 
-See `LICENZA.md` for the file-level mapping.
+Il repository utilizza licenze separate:
+
+- codice e configurazioni tecniche: MIT;
+- regole operative, modelli e documentazione: CC BY 4.0.
+
+Consulta `LICENZA.md` per la mappatura dei file.
+
+## Avvio rapido
+
+1. Crea un repository GitHub **privato** per la tua campagna.
+2. Copia `modelli/campagna/` in `campaign/`.
+3. Copia `modelli/dm/` in `dm/`.
+4. Crea un Custom GPT.
+5. Carica i nove file presenti in `regole/` come Knowledge.
+6. Copia `gpt/ISTRUZIONI.md` nelle Instructions del GPT.
+7. Configura un token GitHub fine-grained limitato al repository della campagna.
+8. Configura l'Action usando `gpt/AZIONE_GITHUB_OPENAPI.yaml`.
+9. Attiva Code Interpreter / Data Analysis.
+10. Verifica lettura, scrittura e RNG prima di iniziare la campagna.
+
+La procedura completa è in `documentazione/INSTALLAZIONE.md`.

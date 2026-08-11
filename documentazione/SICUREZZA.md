@@ -1,25 +1,41 @@
-# Security
+# Sicurezza
 
-## Never publish secrets
+## Non pubblicare segreti
 
-Do not commit:
-- GitHub Personal Access Tokens;
-- API keys;
-- OAuth client secrets;
-- `.env` files;
-- private campaign secrets;
-- personal player data.
+Non inserire mai in un repository pubblico:
 
-## Recommended GitHub token scope
+- Personal Access Token GitHub;
+- API key;
+- segreti OAuth;
+- file `.env`;
+- credenziali;
+- segreti della campagna;
+- dati personali dei giocatori.
 
-For the reference setup, create a fine-grained token:
-- restricted to the individual private campaign repository;
-- repository permission `Contents: Read and write`;
-- no unnecessary additional permissions.
+## Token GitHub consigliato
 
-Store the token only in the Custom GPT Action authentication field.
+Per la configurazione di riferimento utilizza un token fine-grained:
 
-## Public framework vs private campaign
+- limitato esclusivamente al repository privato della singola campagna;
+- permesso `Contents: Read and write`;
+- nessun permesso aggiuntivo non necessario.
 
-Keep this framework repository public and reusable.
-Keep each actual campaign repository private unless the campaign owner intentionally chooses otherwise.
+Il token deve essere inserito esclusivamente nel campo di autenticazione dell'Action del Custom GPT.
+
+## Framework pubblico e campagna privata
+
+Il repository del framework può essere pubblico.
+
+Il repository della campagna reale dovrebbe rimanere privato salvo decisione esplicita del proprietario.
+
+## Segreti del Dungeon Master
+
+I file sotto `dm/` possono contenere informazioni che il giocatore non deve conoscere automaticamente.
+
+Non pubblicare il repository della campagna senza aver verificato attentamente il contenuto di tali file.
+
+## Rotazione delle credenziali
+
+Utilizza una scadenza ragionevole per i token e rigenerali quando necessario.
+
+Se un token viene pubblicato accidentalmente, revocalo immediatamente e creane uno nuovo.

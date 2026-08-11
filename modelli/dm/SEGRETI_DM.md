@@ -1,3 +1,3 @@
-# DM SECRETS
+# SEGRETI DM
 
-No secrets established.
+Nessun segreto ancora stabilito.

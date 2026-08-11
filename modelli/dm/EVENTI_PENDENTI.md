@@ -1,14 +1,14 @@
-# PENDING EVENTS — DM
+# EVENTI PENDENTI — DM
 
-No pending events.
+Nessun evento pendente.
 
-## Event Template
-### E-XXX — Title
-- Origin:
-- Status:
-- Date / trigger:
-- Involved parties:
-- What happens without PC intervention:
-- Information known to PC:
-- Secret information:
-- Expected consequences:
+## Modello evento
+### E-XXX — Titolo
+- Origine:
+- Stato:
+- Data / trigger:
+- Soggetti coinvolti:
+- Cosa accade senza intervento del PG:
+- Informazioni note al PG:
+- Informazioni segrete:
+- Conseguenze previste:
