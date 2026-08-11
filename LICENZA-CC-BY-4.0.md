@@ -1,6 +1,6 @@
 # Creative Commons Attribution 4.0 International
 
-Textual framework content identified in `LICENSE.md` is licensed under the
+Textual framework content identified in `LICENZA.md` is licensed under the
 Creative Commons Attribution 4.0 International license (CC BY 4.0).
 
 You may share and adapt that material, including commercially, provided that

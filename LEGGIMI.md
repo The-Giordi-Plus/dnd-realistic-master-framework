@@ -21,12 +21,12 @@ This repository contains the reusable framework only. Individual campaigns shoul
 
 ## Structure
 
-- `knowledge/` — static AI-DM operating procedures
-- `templates/campaign/` — public empty campaign-state templates
-- `templates/dm/` — empty DM-only state templates
-- `gpt/INSTRUCTIONS.md` — generic Custom GPT instruction template
-- `gpt/github-action-openapi.yaml` — generic GitHub Contents API Action schema
-- `docs/` — setup, architecture, security, licensing, and release notes
+- `regole/` — static AI-DM operating procedures
+- `modelli/campaign/` — public empty campaign-state templates
+- `modelli/dm/` — empty DM-only state templates
+- `gpt/ISTRUZIONI.md` — generic Custom GPT instruction template
+- `gpt/AZIONE_GITHUB_OPENAPI.yaml` — generic GitHub Contents API Action schema
+- `documentazione/` — setup, architecture, security, licensing, and release notes
 
 ## Security
 
@@ -38,7 +38,7 @@ Each user should create a **separate private campaign repository** and a fine-gr
 
 This project is designed for the revised 5e / 5.5e ruleset and uses **SRD 5.2.1** as its public compatibility baseline. It does not redistribute the Player's Handbook, Dungeon Master's Guide, Monster Manual, or other non-SRD rulebook content.
 
-See `NOTICE.md` and `LICENSE.md`.
+See `AVVISO.md` and `LICENZA.md`.
 
 ## License
 
@@ -46,4 +46,4 @@ This repository uses a split license:
 - code/configuration files: MIT;
 - knowledge, templates, and documentation: CC BY 4.0.
 
-See `LICENSE.md` for the file-level mapping.
+See `LICENZA.md` for the file-level mapping.

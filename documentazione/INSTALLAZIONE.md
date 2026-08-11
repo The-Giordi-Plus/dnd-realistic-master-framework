@@ -5,14 +5,14 @@
 Create a new private GitHub repository for the campaign.
 
 Copy:
-- `templates/campaign/` to `campaign/`
-- `templates/dm/` to `dm/`
+- `modelli/campaign/` to `campaign/`
+- `modelli/dm/` to `dm/`
 
 ## 2. Configure the Custom GPT
 
-Upload the nine files from `knowledge/` as Knowledge.
+Upload the nine files from `regole/` as Knowledge.
 
-Copy `gpt/INSTRUCTIONS.md` into the Custom GPT Instructions and replace:
+Copy `gpt/ISTRUZIONI.md` into the Custom GPT Instructions and replace:
 - `YOUR_GITHUB_USERNAME`
 - `YOUR_CAMPAIGN_REPOSITORY`
 
@@ -26,7 +26,7 @@ Configure the Custom GPT Action authentication as an API key using Bearer authen
 
 ## 4. Configure the GitHub Action
 
-Copy `gpt/github-action-openapi.yaml` into the Action schema.
+Copy `gpt/AZIONE_GITHUB_OPENAPI.yaml` into the Action schema.
 
 Replace:
 - `YOUR_GITHUB_USERNAME`
