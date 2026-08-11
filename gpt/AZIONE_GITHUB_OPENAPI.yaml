@@ -3,7 +3,9 @@ openapi: 3.1.0
 info:
   title: Archivio GitHub D&D Realistic Master
   version: 1.0.0
-  description: Legge e aggiorna i file Markdown persistenti della campagna in un repository GitHub privato.
+  description: >
+    Legge e aggiorna i file Markdown persistenti della campagna
+    in un repository GitHub privato.
 
 servers:
   - url: https://api.github.com
@@ -13,7 +15,9 @@ paths:
     get:
       operationId: readCampaignFile
       summary: Legge un file della campagna
-      description: Recupera contenuto e metadati correnti di un file dal repository.
+      description: >
+        Recupera contenuto, SHA e metadati correnti di un file
+        dal repository GitHub.
       parameters:
         - name: path
           in: path
@@ -21,6 +25,7 @@ paths:
           description: Percorso relativo del file nel repository.
           schema:
             type: string
+
         - name: ref
           in: query
           required: false
@@ -28,6 +33,7 @@ paths:
           schema:
             type: string
             default: main
+
       responses:
         "200":
           description: File recuperato correttamente
@@ -48,6 +54,7 @@ paths:
                     type: string
                   content:
                     type: string
+                    description: Contenuto del file codificato in Base64.
                   sha:
                     type: string
                   url:
@@ -63,15 +70,17 @@ paths:
                   - name
                   - path
                   - sha
+
         "404":
-          description: File non trovato
+          description: Repository, branch o file non trovato
 
     put:
       operationId: writeCampaignFile
       summary: Crea o aggiorna un file persistente della campagna
       description: >
-        Crea un nuovo file o sostituisce un file esistente.
-        Prima di aggiornare un file esistente, usa readCampaignFile per ottenere lo SHA corrente.
+        Crea un nuovo file oppure sostituisce un file esistente.
+        Prima di aggiornare un file esistente usa readCampaignFile
+        per ottenere contenuto e SHA correnti.
         Il contenuto Markdown UTF-8 deve essere codificato in Base64.
       parameters:
         - name: path
@@ -80,6 +89,7 @@ paths:
           description: Percorso relativo del file nel repository.
           schema:
             type: string
+
       requestBody:
         required: true
         content:
@@ -90,21 +100,31 @@ paths:
                 message:
                   type: string
                   description: Messaggio descrittivo del commit Git.
+
                 content:
                   type: string
-                  description: Contenuto completo UTF-8 del file codificato in Base64.
+                  description: >
+                    Contenuto completo UTF-8 del file codificato in Base64.
+
                 sha:
                   type: string
-                  description: SHA corrente del file; obbligatorio quando si aggiorna un file esistente.
+                  description: >
+                    SHA corrente del file.
+                    Obbligatorio quando si aggiorna un file esistente.
+                    Omettere soltanto quando si crea un nuovo file.
+
                 branch:
                   type: string
+                  description: Branch sul quale creare il commit.
                   default: main
+
               required:
                 - message
                 - content
+
       responses:
         "200":
-          description: File aggiornato
+          description: File aggiornato correttamente
           content:
             application/json:
               schema:
@@ -123,6 +143,7 @@ paths:
                       - name
                       - path
                       - sha
+
                   commit:
                     type: object
                     properties:
@@ -132,8 +153,9 @@ paths:
                         type: string
                     required:
                       - sha
+
         "201":
-          description: File creato
+          description: File creato correttamente
           content:
             application/json:
               schema:
@@ -152,6 +174,7 @@ paths:
                       - name
                       - path
                       - sha
+
                   commit:
                     type: object
                     properties:
@@ -161,9 +184,15 @@ paths:
                         type: string
                     required:
                       - sha
+
         "404":
-          description: Repository o percorso non trovato
+          description: Repository, branch o percorso non trovato
+
         "409":
-          description: Conflitto, normalmente causato da uno SHA non aggiornato
+          description: >
+            Conflitto. Può verificarsi quando lo SHA utilizzato
+            non corrisponde più alla versione corrente del file.
+
         "422":
-          description: Richiesta non valida
+          description: >
+            Richiesta non valida o non conforme ai requisiti dell'API GitHub.
