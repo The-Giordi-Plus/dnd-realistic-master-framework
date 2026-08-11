@@ -1,7 +1,6 @@
 # CHATGPT DnD REALISTICO
 
-
-Un framework open source per creare un **Dungeon Master IA persistente, imparziale e realistico** per D&D 5.5e / revised 5e.
+Framework open source per creare un Dungeon Master IA persistente, imparziale e realistico per D&D 5.5e.
 
 L'obiettivo è superare alcuni limiti tipici delle campagne gestite esclusivamente tramite chatbot: memoria volatile, stato difficile da verificare, dadi potenzialmente scelti dal modello, NPC troppo dipendenti dal protagonista, rischio di metagaming e assenza di versionamento.
 
