@@ -1,4 +1,5 @@
-# D&D Realistic Master Framework
+# CHATGPT DnD REALISTICO
+
 
 Un framework open source per creare un **Dungeon Master IA persistente, imparziale e realistico** per D&D 5.5e / revised 5e.
 
